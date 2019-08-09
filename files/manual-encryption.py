@@ -27,7 +27,7 @@ payload = "\xaa\xaa\x03\x00\x00\x00\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\x90'
 crc = binascii.crc32(payload)
 
 # Concatenate the ICV to the end of the data
-crc_little_endian = struct.pack("<l",crc)
+crc_little_endian = struct.pack("<l",crc) # pack as little endian
 data = payload + crc_little_endian
 # Concatenate the 24 bits IV with shared key (40 bits or 104 bits)
 # to create the RC4 seed.
@@ -37,7 +37,7 @@ seed = iv+key
 # Calculate the XOR of the keystream with the (payload + ICV)
 data_encrypt = rc4.rc4crypt(data, seed)
 
-# Extract crc encrypted and unpack using 
+# Extract crc encrypted and unpack using big endian network
 crc_big_endian_unpack = struct.unpack("!L",data_encrypt[-4:])
 
 
