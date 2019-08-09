@@ -1,4 +1,0 @@
-icv as shown by Wireshark (encrypted): ecb3fa23
-Unencrypted Message: aaaa03000000080600010800060400019027e4ea61f2c0a80164000000000000c0a801c8
-Unencrypte icv (hex):  cc88cbb2
-Numerical value of icv: 3431517106
