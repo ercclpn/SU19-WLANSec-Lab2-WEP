@@ -41,8 +41,10 @@ data_encrypt = rc4.rc4crypt(data, seed)
 crc_big_endian_unpack = struct.unpack("!L",data_encrypt[-4:])
 
 
-trame_template.wepdata = data_encrypt #store encrypted data in the wepdata field
+trame_template.wepdata = data_encrypt[:-4] #store encrypted data in the wepdata field
 trame_template.icv = crc_big_endian_unpack[0] #store the extracted icv in the frame
 
 # Add frame in a new cap file
 wrpcap("arp_rebuild.cap",trame_template)
+
+print "Frame has been rebuilt."
