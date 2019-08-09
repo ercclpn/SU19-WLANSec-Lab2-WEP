@@ -6,6 +6,12 @@ __Please work in teams of 3 students__
 
 __Korean/Swiss hybrid teams are highly encouraged__
 
+
+## Student's name
+
+Eric Tran - Sangyoon Cha - Alexandre Monteiro Marques
+
+
 ### For this first part, you will need to:
 
 * Understand how to __manually__ decrypt WEP frames using Python and Scapy 
@@ -54,6 +60,11 @@ So, basically, you will need to:
 - Use the original script as a guide for the different format conversions that might be necessary. Take into account that you may have to do some of them in reverse.
 - Export your new frame in pcap format using Scapy and then, read it in Wireshark. If Wireshark is capable of decrypting your forged frame, then you did a good job!
 - Format conversion will be your __nightmare__. If your script doesn't work (Wireshark does not decrypt your frame), it will most probably be because of the way you calculated or you encoded the ICV. Typical problems are the __endianness__ and the __format__. Try to understand what the original script does. 
+
+
+### Screenshot of the result
+The payload is the same from the original pcap.
+![image](images/img1.PNG)
 
 
 ### 3. Fragmentation (Bonus assignment)
